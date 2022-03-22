@@ -1,0 +1,20 @@
+{
+  "name": "dziura.email",
+  "version": "0.0.0",
+  "author": "Z. Charles Dziura <zachary@dziura.email>",
+  "description": "My personal portfolio website",
+  "license": "CC-BY-NC-SA-4.0",
+  "private": true,
+  "scripts": {
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "watch:sass": "npx sass styles/:_site/ --watch",
+    "start": "npm run watch:eleventy && npm run watch:sass"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "sass": "^1.49.9"
+  }
+}

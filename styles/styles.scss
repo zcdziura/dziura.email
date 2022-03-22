@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap"); // TODO: Replace with actual file
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@200;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+
+@import "_normalize";
+@import "_hero";
+
+body {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	justify-items: center;
+	width: 100%;
+
+	hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		width: 100%;
+
+		&::after {
+			background: white;
+			content: "§";
+			display: inline-block;
+			font-size: 1.5em;
+			left: 50%;
+			padding: 0 0.25em;
+			position: relative;
+			top: -0.7em;
+		}
+	}
+}
