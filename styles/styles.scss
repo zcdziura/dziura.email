@@ -6,29 +6,74 @@
 @import "_hero";
 
 body {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	font-family: "Inter", sans-serif;
-	font-size: 16px;
-	justify-items: center;
-	width: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    justify-items: center;
+    width: 100%;
 
-	hr {
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-		width: 100%;
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        width: 100%;
 
-		&::after {
-			background: white;
-			content: "§";
-			display: inline-block;
-			font-size: 1.5em;
-			left: 50%;
-			padding: 0 0.25em;
-			position: relative;
-			top: -0.7em;
-		}
-	}
+        &::after {
+            background: white;
+            content: "§";
+            display: inline-block;
+            font-size: 1.5em;
+            left: 50%;
+            padding: 0 0.25em;
+            position: relative;
+            top: -0.7em;
+        }
+    }
+}
+
+.arrow,
+.arrow:before {
+    position: absolute;
+    left: 50%;
+}
+
+.arrow {
+    border-bottom: 2px rgba(0, 0, 0, 0.87) solid;
+    border-left: none;
+    border-right: 2px rgba(0, 0, 0, 0.87) solid;
+    border-top: none;
+    height: 40px;
+    margin: -20px 0 32px -20px;
+    transform: rotate(45deg);
+    width: 40px;
+    position: fixed;
+    bottom: 0;
+}
+
+.arrow:before {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: arrow;
+    border-bottom: 1px rgba(0, 0, 0, 0.87) solid;
+    border-left: none;
+    border-right: 1px rgba(0, 0, 0, 0.87) solid;
+    border-top: none;
+    content: "";
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    top: 50%;
+    width: 20px;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-10px, -10px);
+    }
 }
