@@ -33,7 +33,7 @@
     }
 
     & .second-word {
-      font-weight: 700;
+      font-weight: 600;
     }
 
     hr {
@@ -42,6 +42,7 @@
 
     .bylines {
       display: flex;
+      font-family: "Inter", sans-serif;
       font-size: 18px;
       margin: 0;
       padding: 0;

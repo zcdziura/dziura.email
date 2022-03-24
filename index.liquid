@@ -1,5 +1,11 @@
 ---
 title: "Homepage | Zachary Dziura"
+nav:
+  - Home
+  - About
+  - Resume
+  - Skills
+  - Contact
 bylines:
   - firstWord: "Web"
     secondWord: "Developer"
@@ -8,11 +14,11 @@ bylines:
   - firstWord: "Dungeon"
     secondWord: "Master"
 about: >
-  Hi there! Thanks for stopping by!
+  Hi there! Thanks for stopping by.
 
-  My name is Zachary, and I'm a software engineer who builds performant and scalable web apps. I'm proficient with a
-  number of different languages and frameworks up-and-down the technology stack: from Angular &amp; NgRx on the
-  front-end; to Rust &amp; Warp, Java &amp; Spring-Boot, C# &amp; .NET, and TypeScript &amp; express on the back-end.
+  My name is Zachary, and I'm a software engineer who builds performant and scalable web apps. I've worked with a number
+  of different languages and frameworks up-and-down the technology stack: from Angular &amp; NgRx on the front-end; to
+  Rust &amp; Warp, Java &amp; Spring-Boot, C# &amp; .NET, and JavaScript/TypeScript &amp; Express on the back-end.
 
   I even administer my own Linux and BSD servers to host my personal projects (including this very website)!
 
@@ -39,33 +45,45 @@ about: >
     <title>{{ title }}</title>
   </head>
   <body>
-    <section id="hero" class="hero">
-      <div class="profile-pic">
-        <img src="/hero.png" height="256" width="256" alt="The man himself, Zachary Dziura!" />
-      </div>
+    <nav>
+      <ul>
+        {% for link in nav %}
+        <li>
+          <a>{{ link }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
 
-      <div class="text">
-        <h1><span class="first-word">Zachary</span>&nbsp;<span class="second-word">Dziura</span></h1>
+    <main>
+      <section id="home" class="hero">
+        <div class="profile-pic">
+          <img src="/hero.webp" height="256" width="256" alt="The man himself, Zachary Dziura!" />
+        </div>
+
+        <div class="text">
+          <h1><span class="first-word">Zachary</span>&nbsp;<span class="second-word">Dziura</span></h1>
+          <hr />
+          <ul class="bylines">
+            {% for byline in bylines %}
+            <li>
+              <span class="first-word">{{ byline.firstWord }}</span
+              >&nbsp;<span class="second-word">{{ byline.secondWord }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <h1>About</h1>
         <hr />
-        <ul class="bylines">
-          {% for byline in bylines %}
-          <li>
-            <span class="first-word">{{ byline.firstWord }}</span
-            >&nbsp;<span class="second-word">{{ byline.secondWord }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
+        {% assign paragraphs = about | split: "\n" %} {% for paragraph in paragraphs %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+      </section>
+    </main>
 
-    <section class="about">
-      <h1>About</h1>
-      <hr />
-      {% assign paragraphs = about | split: "\n" %} {% for paragraph in paragraphs %}
-      <p>{{ paragraph }}</p>
-      {% endfor %}
-    </section>
-
-    <div class="arrow"></div>
+    <script async type="module" src="index.js"></script>
   </body>
 </html>
