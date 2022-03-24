@@ -1,0 +1,71 @@
+---
+title: "Homepage | Zachary Dziura"
+bylines:
+  - firstWord: "Web"
+    secondWord: "Developer"
+  - firstWord: "Rust"
+    secondWord: "Enthusiast"
+  - firstWord: "Dungeon"
+    secondWord: "Master"
+about: >
+  Hi there! Thanks for stopping by!
+
+  My name is Zachary, and I'm a software engineer who builds performant and scalable web apps. I'm proficient with a
+  number of different languages and frameworks up-and-down the technology stack: from Angular &amp; NgRx on the
+  front-end; to Rust &amp; Warp, Java &amp; Spring-Boot, C# &amp; .NET, and TypeScript &amp; express on the back-end.
+
+  I even administer my own Linux and BSD servers to host my personal projects (including this very website)!
+
+  In my spare time &mdash; when not wrangling my kids &mdash; I enjoy working on a variety of projects that satisfy my
+  curiosity with the overall technology landscape. I've built a multitude of CLI programs in Rust to better manage my
+  D&amp;D campaigns. I've also built (but not yet released) an Android app that helps users better manage their personal
+  budget.
+
+  And that only scratches the surface!
+
+  If any of what I've written is interesting enought to warrant a one-on-one conversation, feel free to reach out to me
+  in the Contact section below. I would love to chat with you further to see if my skillset meets your needs!
+
+  Cheers!
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <section id="hero" class="hero">
+      <div class="profile-pic">
+        <img src="/hero.png" height="256" width="256" alt="The man himself, Zachary Dziura!" />
+      </div>
+
+      <div class="text">
+        <h1><span class="first-word">Zachary</span>&nbsp;<span class="second-word">Dziura</span></h1>
+        <hr />
+        <ul class="bylines">
+          {% for byline in bylines %}
+          <li>
+            <span class="first-word">{{ byline.firstWord }}</span
+            >&nbsp;<span class="second-word">{{ byline.secondWord }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section class="about">
+      <h1>About</h1>
+      <hr />
+      {% assign paragraphs = about | split: "\n" %} {% for paragraph in paragraphs %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </section>
+
+    <div class="arrow"></div>
+  </body>
+</html>
