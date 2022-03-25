@@ -18,7 +18,7 @@ nav {
       transition: all 0.3s ease-in-out 0s;
 
       &::before {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.87);
         bottom: -5px;
         content: "";
         height: 2px;
@@ -30,7 +30,7 @@ nav {
 
       &.active,
       &:hover {
-        color: rgba(0, 0, 0, 0.6);
+        color: rgba(0, 0, 0, 0.87);
 
         &::before {
           visibility: visible;

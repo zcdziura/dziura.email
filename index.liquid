@@ -3,8 +3,8 @@ title: "Homepage | Zachary Dziura"
 nav:
   - Home
   - About
-  - Resume
   - Skills
+  - Resume
   - Contact
 bylines:
   - firstWord: "Web"
@@ -33,6 +33,29 @@ about: >
   in the Contact section below. I would love to chat with you further to see if my skillset meets your needs!
 
   Cheers!
+skills:
+  - name: TypeScript
+    value: 10
+  - name: Angular
+    value: 10
+  - name: Rust
+    value: 9
+  - name: Warp
+    value: 8
+  - name: Java
+    value: 8
+  - name: Spring-Boot
+    value: 7
+  - name: Kotlin
+    value: 8
+  - name: Android SDK
+    value: 6
+  - name: C#
+    value: 7
+  - name: ASP.NET
+    value: 5
+  - name: Python
+    value: 6
 ---
 
 <!DOCTYPE html>
@@ -48,7 +71,7 @@ about: >
     <nav>
       <ul>
         {% for link in nav %}
-        <li>
+        <li id="nav-{{ link | downcase }}">
           <a>{{ link }}</a>
         </li>
         {% endfor %}
@@ -82,6 +105,23 @@ about: >
         <p>{{ paragraph }}</p>
         {% endfor %}
       </section>
+
+			<section id="skills" class="skills">
+				<h1>Skills</h1>
+				<hr />
+				<div class="skill-list">
+					{% for skill in skills %}
+					<div class="skill">
+						<span class="skill-name">
+							<label for="progress-bar-{{ skill.name | downcase }}">{{ skill.name }}</label>
+							<span>{{ skill.value }} / 10</span>
+						</span>
+						<div class="progress-bar-wrapper">
+							<div id="progress-bar-{{ skill.name | downcase }}" class="progress-bar" role="progressbar" aria-valuenow="{{ skill.value }}" aria-valuemin="0" aria-valuemax="10"></div>
+						</div>
+					</div>
+					{% endfor %}
+			</section>
     </main>
 
     <script async type="module" src="index.js"></script>

@@ -1,11 +1,6 @@
 .hero {
   align-items: center;
-  column-gap: 12px;
-  display: flex;
-  justify-content: center;
-  max-width: 1200px;
-  min-height: 100vh;
-  width: 100%;
+  flex-direction: row;
 
   & .profile-pic {
     border-radius: 50%;

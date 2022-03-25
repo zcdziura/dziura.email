@@ -3,19 +3,37 @@
 @import "_nav";
 @import "_hero";
 @import "_about";
+@import "_skills";
 
 body {
   // align-items: center;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
   flex-direction: column;
-  font-family: "Fantasque Sans Mono", monospace;
+  font-family: "Quattrocento Sans", sans-serif;
   font-size: 24px;
   width: 100%;
 
   & main {
     margin-left: 25%;
     width: 50%;
+
+    & section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1200px;
+      min-height: 100vh;
+      width: 100%;
+
+      & > h1 {
+        font-family: "Noto Serif Display", serif;
+        font-size: 48px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+    }
 
     & section:last-of-type {
       margin-bottom: 16px;
@@ -33,7 +51,7 @@ body {
       content: "§";
       display: inline-block;
       font-size: 24px;
-      left: 50%;
+      left: calc(50% - 0.25em);
       padding: 0 0.25em;
       position: relative;
       top: -0.7em;
@@ -51,5 +69,18 @@ body {
 
   img::selection {
     background-color: unset;
+  }
+
+  .progress-bar {
+    background-color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: column;
+    height: 10px;
+
+    &-wrapper {
+      display: block;
+      background-color: rgba(0, 0, 0, 0.2);
+      height: 10px;
+    }
   }
 }
