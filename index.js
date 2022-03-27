@@ -49,10 +49,6 @@
           const widthPercent = parseInt(progressBar.getAttribute("aria-valuenow")) * 10;
           progressBar.style.width = `${widthPercent}%`;
         });
-      } else {
-        progressBars.forEach((progressBar) => {
-          progressBar.style.width = "0";
-        });
       }
     });
   }

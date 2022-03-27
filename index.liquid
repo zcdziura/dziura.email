@@ -4,15 +4,15 @@ nav:
   - Home
   - About
   - Skills
-  - Resume
+  - Experience
   - Contact
 bylines:
   - firstWord: "Web"
     secondWord: "Developer"
   - firstWord: "Rust"
     secondWord: "Enthusiast"
-  - firstWord: "Dungeon"
-    secondWord: "Master"
+  - firstWord: "Master"
+    secondWord: "of Dungeons"
 about: >
   Hi there! Thanks for stopping by.
 
@@ -39,16 +39,16 @@ skills:
   - name: Angular
     value: 10
   - name: Rust
-    value: 9
+    value: 10
   - name: Warp
     value: 8
   - name: Java
-    value: 8
+    value: 9
   - name: Spring-Boot
     value: 7
   - name: Kotlin
     value: 8
-  - name: Android SDK
+  - name: Android
     value: 6
   - name: C#
     value: 7
@@ -56,6 +56,46 @@ skills:
     value: 5
   - name: Python
     value: 6
+resume:
+  - name: C Squared Systems
+    dates:
+      startDate: Dec. '21
+      endDate: Present
+    title: Senior Software Engineer
+    responsibilities:
+      - >
+        Lead a small team to rewrite the existing NodeJS RESTful APIs in Rust using the Warp framework to handle all
+        existing business logic in the front-end and API layers, resulting in greater platform modularity, performance,
+        and resiliency.
+      - >
+        Rewrite and redesign the existing product web app by using the latest version of the Angular and NgRx frameworks
+        and rearchitecting the core app design, resulting in reduced page load times and download size, while greatly
+        increasing page execution performance.
+  - name: Sprague Energy
+    dates:
+      startDate: Jun. '19
+      endDate: Dec. '21
+    title: .NET Developer II
+    responsibilities:
+      - >
+        Worked with the Refined Products team to develop and release the new Sprague Real-Time web trading platform
+        using latest version of Angular framework.
+      - >
+        Upgraded the existing set of RESTful APIs to use the latest version of C# and .NET Core.
+  - name: Fidelity Investments
+    dates:
+      startDate: Jul. '14
+      endDate: May '19
+    title: Web Designer
+    responsibilities:
+      - >
+        Built an entirely new web app in Angular to modernize the monitoring and reporting processes for upcoming
+        corporate action events for all customers, replacing the existing batch and CICS mainframe reports.
+      - >
+        Developed RESTful web services using Java and the Spring-Boot framework to interface with the existing DB2
+        databases on the mainframe and provide data to the front-end web app and other teams within the company.
+      - >
+        Mentor and onboard new project members graduating from Fidelity's Leap Program.
 ---
 
 <!DOCTYPE html>
@@ -121,6 +161,28 @@ skills:
 						</div>
 					</div>
 					{% endfor %}
+			</section>
+
+			<section id="experience" class="experience">
+				<h1>Experience</h1>
+				<hr />
+				<div class="resume-items">
+					{% for job in resume %}
+					<div class="resume-item">
+						<div class="employer">
+							<span class="employer-name">{{ job.name }}</span>
+              <span>&nbsp;&mdash;&nbsp;</span>
+              <span class="job-title">{{ job.title }}</span>
+						</div>
+						<span class="employment-date-range">{{ job.dates.startDate }} &ndash; {{ job.dates.endDate }}</span>
+						<ul class="responsibilities">
+						{% for item in job.responsibilities %}
+						<li>{{ item }}</li>
+						{% endfor %}
+						</ul>
+					</div>
+					{% endfor %}
+				</div>
 			</section>
     </main>
 

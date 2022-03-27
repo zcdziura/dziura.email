@@ -8,7 +8,7 @@
   "scripts": {
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "watch:sass": "npx sass styles/:_site/ --watch",
-    "start": "npm run watch:eleventy && npm run watch:sass"
+    "start": "npm run watch:eleventy"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"

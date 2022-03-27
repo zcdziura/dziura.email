@@ -1,0 +1,56 @@
+.experience {
+  & .resume-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+
+  & .resume-item {
+    border-left: 2px solid rgba(0, 0, 0, 0.87);
+    padding-left: 16px;
+
+    &:not(:last-of-type) {
+      padding-bottom: 32px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: white;
+      border-radius: 50%;
+      left: calc(25% - 9px);
+      border: 2px solid rgba(0, 0, 0, 0.87);
+    }
+
+    & .employer {
+      display: flex;
+      font-family: "Inter", sans-serif;
+      margin-bottom: 8px;
+
+      &-name {
+        font-weight: 600;
+      }
+    }
+
+    & .job-title {
+      font-style: italic;
+    }
+
+    & .responsibilities {
+      margin-bottom: 0;
+      padding-left: 12px;
+
+      & > li {
+        line-height: 1.25;
+        list-style-type: "\2666";
+        padding-left: 8px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}
