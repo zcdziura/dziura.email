@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
     files: "./_site/*.css",
   });
 
+  eleventyConfig.addPassthroughCopy("Cahuenga-Regular.woff2");
   eleventyConfig.addPassthroughCopy("hero.webp");
   eleventyConfig.addPassthroughCopy("index.js");
 };
