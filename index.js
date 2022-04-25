@@ -29,9 +29,9 @@
       const navItem = document.getElementById(id);
 
       if (isIntersecting) {
-        navItem.classList.add("active");
+        navItem.setAttribute("aria-current", "page");
       } else {
-        navItem.classList.remove("active");
+        navItem.removeAttribute("aria-current");
       }
     });
   }

@@ -28,7 +28,7 @@ nav {
         width: 0;
       }
 
-      &.active,
+      &[aria-current="page"],
       &:hover {
         color: rgba(0, 0, 0, 0.87);
 
