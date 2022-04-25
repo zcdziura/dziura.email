@@ -6,15 +6,16 @@
   "license": "CC-BY-NC-SA-4.0",
   "private": true,
   "scripts": {
+    "start": "npx concurrently npm:watch:*",
     "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass styles/:_site/ --watch",
-    "start": "npm run watch:eleventy"
+    "watch:sass": "npx sass styles/:_site/ --watch"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "concurrently": "^7.1.0",
     "sass": "^1.49.9"
   }
 }
