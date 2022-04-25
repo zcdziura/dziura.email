@@ -1,10 +1,11 @@
-@import "_normalize";
-@import "_fonts";
-@import "_nav";
-@import "_hero";
-@import "_about";
-@import "_skills";
-@import "_experience";
+@use "_normalize";
+@use "_fonts";
+@use "_nav";
+@use "_hero";
+@use "_about";
+@use "_skills";
+@use "_experience";
+@use "_contact";
 
 body {
   // align-items: center;
