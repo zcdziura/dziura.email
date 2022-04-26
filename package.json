@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build:eleventy && npm run build:js && npm run build:sass",
-    "build:eleventy": "npx @11ty/eleventy && npx html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --remove-empty-elements --remote-optional-tags --remove-redundant-attributes --remove-attribute-quotes -o _site/index.html _site/index.html",
+    "build:eleventy": "npx @11ty/eleventy && npx html-minifier --collapse-boolean-attributes --collapse-inline-tag-whitespace --collapse-whitespace --remote-optional-tags --remove-redundant-attributes --remove-attribute-quotes -o _site/index.html _site/index.html",
     "build:js": "npx uglifyjs -c -m -o _site/index.js -- _site/index.js",
     "build:sass": "npx sass styles/:_site/ -s compressed",
     "start": "npx concurrently npm:watch:*",
