@@ -310,4 +310,3 @@ cython_debug/
 pyvenv.cfg
 pip-selfcheck.json
 
-_site/
